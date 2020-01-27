@@ -35,3 +35,57 @@ ca_np <- read_csv(here("data/ca_np.csv"))
 ci_np <- read_excel(here("data", "ci_np.xlsx"))
 ```
 
+### Make my own first graph!
+
+We're going to make a line plot of year (x-variable) vs visitors (y-variable) in ggplot
+
+Command + ALT + I is the keyboard shortcut to insert code chunk.
+
+```{r}
+ggplot(data = ci_np, aes(x = year, y = visitors)) + 
+  geom_col()
+# Update the geom_ to geom_point(), geom_col(), geom_area()
+```
+
+Making a base layer for my Channel Islands plots: 
+```{r}
+gg_base <- ggplot(data = ci_np, aes(x = year, y = visitors))
+
+gg_base + geom_point()
+```
+
+### Now let's start customizing!
+
+- line/point colors: color
+- change line type: linetype
+- change point style: pch
+- change transparency: alpha
+
+```{r}
+gg_base +
+  geom_line(
+    color = "purple",
+    linetype = "dashed"
+  )
+```
+
+Activity: create a ggplot scatterplot (geom_point) that has triangle symbols (hint: ?pch), of a non-default size (size = #), and that are an updated color.
+```{r}
+gg_base +
+  geom_point(color = "red",
+             pch = 2,
+             size = 4)
+```
+
+
+### Update graph aesthetics based on variables
+```{r}
+gg_base + 
+  geom_point(
+    aes(size = visitors, color = year), 
+    pch = 2
+  )
+
+## Add arguments to update variables based on visitors and color
+```
+
