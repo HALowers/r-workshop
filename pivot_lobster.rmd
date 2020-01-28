@@ -16,7 +16,7 @@ library(skimr) # install.packages("skimr")
 library(kableExtra) # install.packages("kableExtra")
 
 # read in lobster data and ignore first few rows of file
-lobsters <- read_xlsx(here("data", "lobsters.xlsx"), skip = 4)
+lobsters <- read_xlsx(here("data", "lobsters2.xlsx"), skip = 4)
 
 
 ```
