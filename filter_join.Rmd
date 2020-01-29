@@ -142,4 +142,4 @@ Create a graph x is common_name and y is total
 ggplot(data = my_fish_join, aes(x = common_name, y = fish_per_frond)) + 
   geom_col(aes(fill = common_name))
 ```
-
+ eilki
